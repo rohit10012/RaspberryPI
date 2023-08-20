@@ -1,0 +1,11 @@
+	1. Go to this website:
+	https://techguides.yt/guides/linux-server/free-dynamic-dns/
+	
+	Follow these steps:
+	
+	1. Login to Dynu website and go to ddns records and add nee record
+	2. Now make a crontab entry as below:
+	
+	*/15 * * * * wget -O dynulog -4 "https://api.dynu.com/nic/update?hostname=rohit.giize.com&myip=10.0.0.0&myipv6=no&username=rohit10012@gmail.com&password=ec41cb4fab25339a669751fbaec95264"
+	
+Done
