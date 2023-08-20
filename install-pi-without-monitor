@@ -1,0 +1,25 @@
+Credentials: ubuntu/same as I remember (E5nmRBG7)
+Default credentials: ubuntu/ubuntu
+
+Install Ubuntu on Raspberry PI 4:
+
+	1. Go to this website and down load imager
+	https://ubuntu.com/tutorials/how-to-install-ubuntu-desktop-on-raspberry-pi-4#2-prepare-the-sd-card
+	
+	2. Launch imager and select ubuntu version of your choice,
+	3. Now write that OS into SD card,
+	4. Once done, copy network-config, ssh and user-data file from my local system
+	5. One done, plug it into the Raspberry PI 
+	6. Connect to ip after 5-10 min
+	7. If can not find rasp pi on ip scanner then reboot it and try again in 5 min.
+
+
+=========================================================================
+
+For Raspberry pi
+
+From step 4: copy network-config and ssh files
+
+Rest are same.
+
+
