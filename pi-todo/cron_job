@@ -1,0 +1,5 @@
+to create a cronjob which will update and upgrade at 23:30 daily
+
+1. crontab -e
+
+2. 0 23 * * * log_file="/home/rohit/sudo_update_$(date +\%Y\%m\%d_\%H\%M\%S).log"; (echo "==== $(date) ====" >> "$log_file" && sudo apt update >> "$log_file" 2>&1 && sudo apt -y upgrade >> "$log_file" 2>&1 && echo "Update and upgrade successful" >> "$log_file" && sudo shutdown -h now)

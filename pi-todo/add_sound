@@ -1,0 +1,45 @@
+
+1. Check USB Audio Device:
+Ensure your Raspberry Pi detects the JBL speakers. Open a terminal on your Raspberry Pi and 
+aplay -l
+
+This command lists all audio devices. Look for your JBL speakers in the output.
+
+2. Set USB Audio as Default Device:
+If your speakers are detected, you need to set them as the default audio device. Edit the ALSA configuration file:
+
+sudo nano /etc/asound.conf
+
+
+3. Add the following content to set the USB audio device as the default:
+pcm.!default {
+  type hw
+  card 1
+}
+
+ctl.!default {
+  type hw
+  card 1
+}
+
+4. Test Sound Output:
+Use the speaker-test command to check the sound output:
+speaker-test -c2 -twav
+
+This command plays a test sound through the speakers. You should hear white noise or a test sound indicating successful setup.
+
+5. Play Audio Files:
+To play an audio file, you can use a media player like omxplayer or mplayer. For example:
+
+omxplayer /path/to/your/audiofile.mp3
+
+6. Adjust Volume:
+You can adjust the volume using the alsamixer tool. Run:
+
+alsamixer
+
+7. Install Required Packages:
+If you do not have omxplayer or mplayer installed, you can install them using:
+
+sudo apt-get update
+sudo apt-get install omxplayer mplayer
