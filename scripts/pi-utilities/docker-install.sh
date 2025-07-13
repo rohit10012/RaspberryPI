@@ -10,5 +10,5 @@ sh install-docker.sh
 
 echo "Docker installed successfully"
 
-#add current user to root so that it can access docker socket
-sudo chown root:$USER /var/run/docker.sock
+# Add the current user to the docker group to run docker commands without sudo
+sudo usermod -aG docker $USER
